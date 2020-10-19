@@ -9,7 +9,7 @@ const Editor = () => (
           //   path: 'img/sampleImage.jpg',
           //   name: 'SampleImage'
           // },
-          //theme: myTheme,
+          // theme: 'whitetheme',
           menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'mask', 'filter'],
           initMenu: 'filter',
           uiSize: {
