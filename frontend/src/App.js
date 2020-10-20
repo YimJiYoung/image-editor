@@ -1,12 +1,11 @@
 import React from 'react';
 import Routes from './routes';
-import Header from './components/common/header';
+import Header from './components/common/Header';
 import { HashRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
-          {/* <HeaderContainer /> */}
           <Header/>
           <Routes />
     </Router>
