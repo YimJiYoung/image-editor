@@ -19,12 +19,12 @@ exports.signup = async (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
-    passport.authenticate('local', (err, user, info) => {
-        if (err) return next(err);
-        if (!user) return res.status(401).json({ ok: false, ...info });
-        req.logIn(user, (err) => {
-            if (err) return next(err);
-            res.json({ ok: true, user: req.user });
-        });
-    })(req, res, next);
-  };
+  passport.authenticate('local', (err, user, info) => {
+    if (err) return next(err);
+    if (!user) return res.status(401).json({ ok: false, ...info });
+    req.logIn(user, (loginErr) => {
+      if (loginErr) next(loginErr);
+      res.json({ ok: true, user: req.user });
+    });
+  })(req, res, next);
+};

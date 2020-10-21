@@ -1,13 +1,13 @@
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
 const session = require('express-session');
-var logger = require('morgan');
+const logger = require('morgan');
 const passport = require('passport');
 const { sequelize } = require('./models');
 const passportConfig = require('./modules/passport');
-var router = require('./routes');
+const router = require('./routes');
 
-var app = express();
+const app = express();
 sequelize.sync();
 
 app.use(logger('dev'));
