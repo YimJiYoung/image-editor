@@ -10,6 +10,6 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.User = require('./user')(sequelize, Sequelize);
+db.User = require('./User')(sequelize, Sequelize);
 
 module.exports = db;
