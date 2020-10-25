@@ -7,7 +7,7 @@ import { pathUri } from './constants/path';
 
 const routes = () => (
     <Switch>
-        <Route path={pathUri.home} component={Editor} exact />
+        <Route path={pathUri.home} component={SignIn} exact />
         <Route path={pathUri.signin} component={SignIn} />
         <Route path={pathUri.board} component={Board} />
         <Route component={() => <Redirect to={pathUri.home} />} />

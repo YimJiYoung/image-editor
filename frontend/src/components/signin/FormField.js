@@ -6,11 +6,11 @@ import Grid from '@material-ui/core/Grid';
 
 const FormField = (props) => {
   const {
-    login, reset, onChange, onSubmit, remember, 
+    loginState, login, loginAsGuest 
   } = props;
 
   const [state, setState] = React.useState({
-    loginState: login,
+    loginState,
     userName: '',
     email: '',
     password: '',
@@ -93,10 +93,15 @@ const FormField = (props) => {
             <Button
             variant="contained"
             color="primary"
-            onClick={(e) => { onSubmit(state); }}
+            onClick={(e) => { login(state); }}
             >
             {state.loginState ? 'Sign in' : 'Sign up'}
             </Button>
+        </Grid>
+        <Grid item xs={12}>
+          <Button>
+            Sign in as a guest
+          </Button>
         </Grid>
       </Grid>
     </>
