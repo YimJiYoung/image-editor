@@ -5,6 +5,17 @@ import ImageEditor from '@toast-ui/react-image-editor'
 const ImageEditorContainer = (props) => {
     const { imageUrl } = props; 
     const editorRef = React.createRef();
+    const loadImage = () => {
+        // fetch(imageUrl, {  mode: 'cors' })              
+        //     .then(response => response.blob())
+        //     .then(images => {
+        //         const outside = URL.createObjectURL(images)
+        //         const editorInstance = editorRef.current.getInstance();
+        //         editorInstance.loadImageFromURL(outside, 'test')
+        //     })
+    }
+
+    useEffect(loadImage, [imageUrl]);
 
     return (
     <ImageEditor

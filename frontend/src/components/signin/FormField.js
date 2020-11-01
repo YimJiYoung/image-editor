@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 
 const FormField = (props) => {
   const {
-    loginState, login, loginAsGuest 
+    loginState, login, guestLogin 
   } = props;
 
   const [state, setState] = React.useState({
@@ -99,7 +99,7 @@ const FormField = (props) => {
             </Button>
         </Grid>
         <Grid item xs={12}>
-          <Button>
+          <Button onClick={guestLogin}>
             Sign in as a guest
           </Button>
         </Grid>

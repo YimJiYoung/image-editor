@@ -20,6 +20,10 @@ const SignInContainer = (props) => {
         }
     }
 
+    const guestLogin = () => {
+        history.push(pathUri.editor);
+    }
+
     const handleSuccess = (user) => {
         history.push(pathUri.board);
     };
@@ -29,6 +33,7 @@ const SignInContainer = (props) => {
             <FormField  
                 loginState={true}
                 login={login}
+                guestLogin={guestLogin}
             />
         </>
     );
