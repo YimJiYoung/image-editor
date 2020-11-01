@@ -3,4 +3,5 @@ export const pathUri = {
     signin: '/signin',
     signup: '/signup',
     board: '/board',
+    editor: '/editor',
 };

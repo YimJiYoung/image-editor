@@ -1,31 +1,10 @@
 import React from 'react';
-import 'tui-image-editor/dist/tui-image-editor.css'
-import ImageEditor from '@toast-ui/react-image-editor'
+import ImageEditorContainer from '../container/editor/ImageEditorContainer';
 
-const Editor = () => (
-      <ImageEditor
-        includeUI={{
-          // loadImage: {
-          //   path: 'img/sampleImage.jpg',
-          //   name: 'SampleImage'
-          // },
-          // theme: 'whitetheme',
-          menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'mask', 'filter'],
-          initMenu: 'filter',
-          uiSize: {
-            width: '1000px',
-            height: '700px'
-          },
-          menuBarPosition: 'bottom'
-        }}
-        cssMaxHeight={500}
-        cssMaxWidth={700}
-        selectionStyle={{
-          cornerSize: 20,
-          rotatingPointOffset: 70
-        }}
-        usageStatistics={true}
-      />
-);
+const Editor = () => {
+    return (
+        <ImageEditorContainer imageUrl="https://media.vlpt.us/post-images/public_danuel/f6564fd0-61b4-11e9-bf0a-7575a906d2e9/thumbnail16x.png"/>
+    );
+};
 
 export default Editor;

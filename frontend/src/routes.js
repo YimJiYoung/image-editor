@@ -10,6 +10,7 @@ const routes = () => (
         <Route path={pathUri.home} component={SignIn} exact />
         <Route path={pathUri.signin} component={SignIn} />
         <Route path={pathUri.board} component={Board} />
+        <Route path={pathUri.editor} component={Editor} />
         <Route component={() => <Redirect to={pathUri.home} />} />
     </Switch>
 );
