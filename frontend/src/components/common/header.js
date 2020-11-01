@@ -19,10 +19,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = (props) => {
     const classes = useStyles();
-    const theme = useTheme();
-    const { data, handlelogout } = props;
-    // const { userName } = data;
-    const userName = 'test';
+    //const theme = useTheme();
+    const { userName, handlelogout } = props;
   
     return (
       <header className={classes.header}>
