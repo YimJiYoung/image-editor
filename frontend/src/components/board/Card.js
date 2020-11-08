@@ -18,24 +18,21 @@ const useStyles = makeStyles({
   },
 });
 
-const MediaCard = () => {
+const MediaCard = (props) => {
   const classes = useStyles();
+  const { title, onClick } = props;
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={onClick}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://blog.kakaocdn.net/dn/buCG4Y/btqARXIZJTL/qzKCwukwX7NbFHIxepmG81/img.png"
+          image="https://media.vlpt.us/post-images/public_danuel/f6564fd0-61b4-11e9-bf0a-7575a906d2e9/thumbnail16x.png"
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+          <Typography gutterBottom variant="h6">
+            {title}
           </Typography>
         </CardContent>
       </CardActionArea>

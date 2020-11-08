@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router";
 import Container from '@material-ui/core/Container';
 import MediaCard from '../components/board/Card';
 import { makeStyles } from "@material-ui/core/styles"
@@ -12,15 +13,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Board = () => {
+const Board = ({ history }) => {
     const classes = useStyles()
+    const handleClick = () => {
+      history.push('editor');
+    }
+
     return (
         <Container maxWidth="lg" className={classes.container}>
-            <MediaCard/>
+            <MediaCard title="title" onClick={handleClick}/>
             <MediaCard/>
             <MediaCard/>
         </Container>
     );
 };
 
-export default Board;
+export default withRouter(Board);
