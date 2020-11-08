@@ -10,8 +10,8 @@ module.exports = (sequelize, DataType) => sequelize.define('project', {
     allowNull: false,
     unique: true,
   },
-  image: {
-    type: DataType.BLOB,
+  imageUrl: {
+    type: DataType.STRING,
     allowNull: false,
   },
 });
