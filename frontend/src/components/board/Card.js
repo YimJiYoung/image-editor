@@ -20,14 +20,14 @@ const useStyles = makeStyles({
 
 const MediaCard = (props) => {
   const classes = useStyles();
-  const { title, onClick } = props;
+  const { title, imageUrl, onClick } = props;
 
   return (
     <Card className={classes.root} onClick={onClick}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://media.vlpt.us/post-images/public_danuel/f6564fd0-61b4-11e9-bf0a-7575a906d2e9/thumbnail16x.png"
+          image={imageUrl}
           title="Contemplative Reptile"
         />
         <CardContent>

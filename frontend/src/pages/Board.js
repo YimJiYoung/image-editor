@@ -1,5 +1,6 @@
-import React from 'react';
-import { withRouter } from "react-router";
+import React, { useState, useEffect } from 'react';
+import { SignApi } from '../utils/api';
+import { useHistory } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import MediaCard from '../components/board/Card';
 import { makeStyles } from "@material-ui/core/styles"
@@ -13,19 +14,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Board = ({ history }) => {
+const Board = () => {
     const classes = useStyles()
+    const [ projects, setProjects] = useState([]);
+    const history = useHistory();
+
     const handleClick = () => {
       history.push('editor');
+      // window.location.href = '/#/editor';
     }
+
+    useEffect(() => {
+      const getInitialData = async () => {
+        const { projects } = await SignApi('http://localhost:9000/projects', { method: 'GET'})
+        setProjects(projects);
+      }
+      getInitialData();
+    }, []);
+
 
     return (
         <Container maxWidth="lg" className={classes.container}>
-            <MediaCard title="title" onClick={handleClick}/>
-            <MediaCard/>
-            <MediaCard/>
+             { projects.map(({ id, name, imageUrl}) =>  
+              <MediaCard key={id} title={name} imageUrl={imageUrl} onClick={handleClick}/>)}
         </Container>
     );
 };
 
-export default withRouter(Board);
+export default Board;
