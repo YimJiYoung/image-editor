@@ -1,29 +1,21 @@
-import React, { createRef, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import 'tui-image-editor/dist/tui-image-editor.css'
 import ImageEditor from '@toast-ui/react-image-editor'
+import userContext from '../../utils/context';
 
-const ImageEditorContainer = (props) => {
-    const { imageUrl } = props; 
+const ImageEditorContainer = () => {
     const editorRef = React.createRef();
-    const loadImage = () => {
-        // fetch(imageUrl, {  mode: 'cors' })              
-        //     .then(response => response.blob())
-        //     .then(images => {
-        //         const outside = URL.createObjectURL(images)
-        //         const editorInstance = editorRef.current.getInstance();
-        //         editorInstance.loadImageFromURL(outside, 'test')
-        //     })
-    }
-
-    useEffect(loadImage, [imageUrl]);
+    const { data, setData } = useContext(userContext);
+    const { editingImageUrl } = data;
+    const sampleImageUrl = 'https://kr.object.ncloudstorage.com/image-editor/mountain_%2Bwallpaper.jpg';
 
     return (
     <ImageEditor
         ref={editorRef}
         includeUI={{
         loadImage: {
-          path: imageUrl,
-          name: 'SampleImage'
+          path: editingImageUrl? editingImageUrl: sampleImageUrl,
+          name: 'image'
         },
         // theme: 'whitetheme','
         menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'mask', 'filter'],

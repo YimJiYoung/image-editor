@@ -7,6 +7,7 @@ import userContext  from './utils/context';
 function App() {
   const [state, setState] = useState({
     userName: '',
+    editingImageUrl: '',
   });
   const contextProps = {
     data: state,
