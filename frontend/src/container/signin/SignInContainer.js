@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 import { SignApi } from '../../utils/api';
+import userContext from '../../utils/context';
 import FormField from '../../components/signin/FormField';
 import { pathUri } from '../../constants/path';
 
 const SignInContainer = (props) => {
     const { history } = props;
+    const { data, setData } = useContext(userContext);
 
     const login = async (state) => {
         const data = {
@@ -25,6 +27,9 @@ const SignInContainer = (props) => {
     }
 
     const handleSuccess = (user) => {
+        setData({
+            ...data, userName: user.name
+        })
         history.push(pathUri.board);
     };
 

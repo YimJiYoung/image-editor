@@ -17,11 +17,11 @@ const ImageEditorContainer = () => {
           path: editingImageUrl? editingImageUrl: sampleImageUrl,
           name: 'image'
         },
-        // theme: 'whitetheme','
+        // theme: 'whitetheme',
         menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'mask', 'filter'],
         initMenu: 'filter',
         uiSize: {
-            width: '1000px',
+            width: '100%',
             height: '700px'
         },
         menuBarPosition: 'bottom'
