@@ -34,7 +34,7 @@ const ImageEditorContainer = () => {
         initMenu: "filter",
         uiSize: {
           width: "100%",
-          height: "750px",
+          height: "800px",
         },
         menuBarPosition: "bottom",
       }}
